@@ -22,8 +22,9 @@ pub fn start() {
 
     let stdin = io::stdin();
 
+    let mut line = String::with_capacity(128);
     loop {
-        let mut line = String::new();
+        line.clear();
         stdin.read_line(&mut line).expect("Failed to read line");
 
         let split = line.split_whitespace().collect_vec();
